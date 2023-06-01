@@ -1,4 +1,5 @@
 {
-  "homeTitle": "Internacionaização",
-  "homeP": "Verificação de funcionamento de internacionalização"
+  "home.titulo": "Internacionalização do Sistema",
+  "home.subtitulo": "Seja bem-vindo {{usuario}}",
+  "home.descricao": "Verificação de funcionamento de internacionalização do sistema."
 }

@@ -1,44 +1,36 @@
-import { APP_INITIALIZER, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { catchError, of } from 'rxjs';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './layouts/header/header.component';
+import { HeaderModule } from './layouts/header/header.module';
 
-export function initApp(http: HttpClient, translate: TranslateService) {
-  return () => new Promise<boolean>((resolve: (res: boolean) => void) => {
-    const defaultLocale = 'pt';
-    http.get('/assets/i18n/dev.json').pipe(
-      catchError(() => of(null))
-    ).subscribe((devKeys: any) => {
-      translate.setTranslation(defaultLocale, devKeys || {});
-      translate.setDefaultLang(defaultLocale);
-      translate.use(defaultLocale);
-      resolve(true);
-    });
-  });
+export function httpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TranslateModule.forRoot()
+    HeaderModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'pt',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: httpLoaderFactory,
+        deps: [ HttpClient ],
+      }
+    })
   ],
-  providers: [{
-    provide: APP_INITIALIZER,
-    useFactory: initApp,
-    deps: [ HttpClient, TranslateService ],
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

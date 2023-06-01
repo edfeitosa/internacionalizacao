@@ -12,7 +12,9 @@ import { HomeComponent } from './home.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    TranslateModule.forRoot()
+    TranslateModule.forChild({
+      extend: true
+    })
   ]
 })
 export class HomeModule { }
