@@ -12,10 +12,16 @@ export class AppComponent {
     translate: TranslateService,
     @Inject(LOCALE_ID) public locale: string
   ) {
-    translate.addLangs(['pt', 'en']);
-    translate.setDefaultLang('pt');
-    translate.use('pt');
-
-    console.log(locale)
+    console.log(locale);
+    // this.setLocale();
+    translate.setDefaultLang(locale);
+    console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
   }
+
+  /* private setLocale(): void {
+    const locale_id: string | null = sessionStorage.getItem('locale_id');
+    locale_id ? this.translate.setDefaultLang(locale_id) : this.translate.setDefaultLang('pt')
+  } */
+
 }
+
