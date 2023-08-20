@@ -1,0 +1,11 @@
+{
+  "Titulo": "Creando nuevo usuario",
+  "DataAtual": "La fecha es: ",
+  "Nome": "Primer Nombre",
+  "Sobrenome": "Apellido",
+  "Idade": "Edad",
+  "BotaoCriar": "Crear",
+  "IdadeObrigatoria": "Debe ingresar su edad",
+  "PrimeiroNomeObrigatorio": "Debe ingresar su nombre",
+  "SobrenomeObrigatorio": "Debe ingresar su apellido"
+}
