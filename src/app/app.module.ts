@@ -13,7 +13,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LocalizacaoHelper } from './I18N/localizacao.helper';
 import { Recursos } from './I18N/recursos.class';
-import { IRecursos } from './models/recursos.interface';
 
 @NgModule({
   declarations: [
@@ -27,7 +26,9 @@ import { IRecursos } from './models/recursos.interface';
   providers: [{
     provide: LOCALE_ID, useFactory: () => LocalizacaoHelper.getLocalizacaoAtual()
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule {
 
@@ -36,21 +37,18 @@ export class AppModule {
     registerLocaleData(localeEsMx, 'es-MX', localeEsMxExtra);
     registerLocaleData(localeEn, 'en', localeEnExtra);
 
-    /* import(`./I18N/linguagens/recursos.${LocalizacaoHelper.getLocalizacaoAtual().toLowerCase()}.js`).then((localidade) => {
-      for (const CHAVE in localidade.recursos) {
-        if (localidade.recursos.hasOwnProperty(CHAVE)) {
-          Recursos[CHAVE] = localidade.recursos[CHAVE];
-        }
-      }
-    }); */
-
     // import dinâmico
     this._carregagaDadosRecursos();
   }
 
   private _carregagaDadosRecursos(): void {
     this.http.get<any>(`/assets/linguagens/recursos.${LocalizacaoHelper.getLocalizacaoAtual().toLowerCase()}.json`)
-      .pipe(take(1)).subscribe((localidade: IRecursos) => Recursos.recursos = localidade);
+      .pipe(take(1)).subscribe(localidade => {
+        for (const CHAVE in localidade) {
+          // Recursos[CHAVE] = localidade[CHAVE];
+          (<any>Recursos)[CHAVE] = localidade[CHAVE];
+        }
+      });
   }
 
 }

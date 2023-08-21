@@ -1,14 +1,13 @@
-import { IRecursos } from '../models/recursos.interface';
+import { IRecursos } from '../shared/models/recursos.interface';
 
 export abstract class Recursos {
-  // static [chave: string]: string;
-  public static recursos: IRecursos;
-
-  /* constructor (recursosLocalidade: IRecursos) {
-    this._recursos = recursosLocalidade;
-  } */
-
-  get recursos(): IRecursos {
-    return this.recursos;
-  }
+  public static Titulo: string;
+  public static DataAtual: string;
+  public static Nome: string;
+  public static Sobrenome: string;
+  public static Idade: string;
+  public static BotaoCriar: string;
+  public static IdadeObrigatoria: string;
+  public static PrimeiroNomeObrigatorio: string;
+  public static SobrenomeObrigatorio: string;
 }
