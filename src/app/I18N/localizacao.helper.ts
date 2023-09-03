@@ -1,5 +1,5 @@
 export abstract class LocalizacaoHelper {
-  public static localizacaoIdPadrao = 'pt-BR';
+  public static localizacaoIdPadrao = 'pt';
   public static localizacoesImplementados = ['es-MX', 'en'];
 
   public static setaLocalizacaoAtual(localizacaoId: string) {

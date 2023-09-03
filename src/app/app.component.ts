@@ -8,6 +8,7 @@ import { LocalizacaoComponent } from './I18N/localizacao.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent extends LocalizacaoComponent {
+  public dataAtual = new Date();
   
   constructor () {
     super();
