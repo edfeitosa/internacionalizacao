@@ -1,6 +1,7 @@
 {
   "Titulo": "Creating New User",
-  "DataAtual": "The date is: ",
+  "DataAtual": "Today is",
+  "Descricao": "Fields marked with * are mandatory",
   "Nome": "First Name",
   "Sobrenome": "Last Name",
   "Idade": "Age",

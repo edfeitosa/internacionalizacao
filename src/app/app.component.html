@@ -1,2 +1,6 @@
-<h1>{{ recursos.Titulo }}</h1>
-<p>{{ recursos.DataAtual }} {{ dataAtual | date:'fullDate' }}</p>
+<app-header [titulo]="recursos.Titulo"></app-header>
+
+<div class="content">
+  <h2>{{ recursos.DataAtual }} {{ dataAtual | date:'fullDate' }}</h2>
+  <p>{{ recursos.Descricao }}</p>
+</div>

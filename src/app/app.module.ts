@@ -15,10 +15,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LocalizacaoHelper } from './I18N/localizacao.helper';
 import { Recursos } from './I18N/recursos.class';
+import { HeaderComponent } from './componentes/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

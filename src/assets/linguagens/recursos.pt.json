@@ -1,6 +1,7 @@
 {
   "Titulo": "Criando Novo Usuário",
-  "DataAtual": "A data é: ",
+  "DataAtual": "Hoje é",
+  "Descricao": "Os campos marcados com * são obrigatórios",
   "Nome": "Nome",
   "Sobrenome": "Sobrenome",
   "Idade": "Idade",
