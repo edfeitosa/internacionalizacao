@@ -16,7 +16,7 @@ export class HeaderComponent extends LocalizacaoComponent {
     super();
   }
 
-  public selecaoLinguagem(linguagem: string): void {
+  public informaNovaLinguagem(linguagem: string): void {
     // informa nova linguagem
     LocalizacaoHelper.setaLocalizacaoAtual(linguagem);
     // recarrega página

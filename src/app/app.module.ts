@@ -10,6 +10,7 @@ import localeEnExtra from '@angular/common/locales/extra/en';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { take } from 'rxjs/operators';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +26,9 @@ import { HeaderComponent } from './componentes/header/header.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{
     provide: LOCALE_ID, useFactory: () => LocalizacaoHelper.getLocalizacaoAtual()

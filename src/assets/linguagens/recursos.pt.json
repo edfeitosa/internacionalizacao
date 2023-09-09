@@ -2,11 +2,11 @@
   "Titulo": "Criando Novo Usuário",
   "DataAtual": "Hoje é",
   "Descricao": "Os campos marcados com * são obrigatórios",
-  "Nome": "Nome",
+  "Nome": "Primeiro Nome",
   "Sobrenome": "Sobrenome",
   "Idade": "Idade",
   "BotaoCriar": "Criar",
   "IdadeObrigatoria": "Idade é obrigatória",
-  "PrimeiroNomeObrigatorio": "Nome é obrigatório",
+  "PrimeiroNomeObrigatorio": "Primeiro nome é obrigatório",
   "SobrenomeObrigatorio": "Sobrenome é obrigatório"
 }
